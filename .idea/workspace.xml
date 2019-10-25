@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/FSExtension.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension.podspec" afterDir="false" />
+    <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="add cocoapods">
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/AppDelegate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/AppDelegate.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Assets.xcassets/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Base.lproj/Main.storyboard" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/ViewController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/ViewController.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/main.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtension.podspec" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +32,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
@@ -48,8 +63,16 @@
       <option name="presentableId" value="Default" />
       <updated>1571997437666</updated>
       <workItem from="1571997439073" duration="119000" />
-      <workItem from="1571997576595" duration="622000" />
+      <workItem from="1571997576595" duration="1602000" />
     </task>
+    <task id="LOCAL-00001" summary="add cocoapods">
+      <created>1571998639721</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571998639721</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -65,5 +88,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add cocoapods" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cocoapods" />
   </component>
 </project>

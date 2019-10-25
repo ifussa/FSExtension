@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="release 0.0.1">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtension.podspec" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571997437666</updated>
       <workItem from="1571997439073" duration="119000" />
-      <workItem from="1571997576595" duration="2537000" />
+      <workItem from="1571997576595" duration="2805000" />
     </task>
     <task id="LOCAL-00001" summary="add cocoapods">
       <created>1571998639721</created>

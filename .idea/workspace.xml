@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="add cocoapods">
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/AppDelegate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/AppDelegate.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Assets.xcassets/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Base.lproj/Main.storyboard" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/ViewController.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/ViewController.m" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FSExtension/FSExtension/main.m" afterDir="false" />
+    <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="release 0.0.1">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtension.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtension.podspec" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SguDB7T0WB357kH7ScSWa9HgMr" />
@@ -63,7 +56,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571997437666</updated>
       <workItem from="1571997439073" duration="119000" />
-      <workItem from="1571997576595" duration="1602000" />
+      <workItem from="1571997576595" duration="2537000" />
     </task>
     <task id="LOCAL-00001" summary="add cocoapods">
       <created>1571998639721</created>
@@ -72,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571998639721</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="release 0.0.1">
+      <created>1571999734723</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571999734723</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +91,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add cocoapods" />
-    <option name="LAST_COMMIT_MESSAGE" value="add cocoapods" />
+    <MESSAGE value="release 0.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="release 0.0.1" />
   </component>
 </project>

@@ -6,8 +6,8 @@
 //  Copyright © 2019 Fussa. All rights reserved.
 //
 
-#ifndef MTFYHeader_h
-#define MTFYHeader_h
+#ifndef FSHeader_h
+#define FSHeader_h
 
 #import "MBProgressHUD+FS.h"
 #import "NSDate+FS.h"
@@ -27,4 +27,4 @@
 #import "UIView+FS.h"
 
 
-#endif /* MTFYHeader_h */
+#endif /* FSHeader_h */

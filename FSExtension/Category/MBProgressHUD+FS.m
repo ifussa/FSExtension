@@ -54,6 +54,7 @@
     hud.label.text = message;
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
+    // 再设置模式
     hud.mode = MBProgressHUDModeIndeterminate;
     return hud;
 }

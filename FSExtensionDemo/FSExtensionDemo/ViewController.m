@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-//#import "FSHeader.h"
+#import "FSHeader.h"
 
 
 @interface ViewController ()
@@ -23,7 +23,12 @@
     label.text = @"DEMO";
     label.textAlignment = NSTextAlignmentCenter;
 
-    self.view.backgroundColor = [UIColor redColor];
+
+    self.view.backgroundColor = [UIColor fs_randomColorWithAlpha:0.5];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD fs_showSuccess:@"SUCCESS"];
+    });
+
 }
 
 

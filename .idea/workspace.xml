@@ -2,44 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtension.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtension.podspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/MBProgressHUD+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/MBProgressHUD+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSDate+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSDate+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSObject+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSObject+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSString+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSString+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSUserDefaults+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/NSUserDefaults+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIBarButtonItem+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIBarButtonItem+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIButton+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIButton+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIColor+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIColor+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIImage+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIImage+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UILabel+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UILabel+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UINavigationBar+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UINavigationBar+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UINavigationController+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UINavigationController+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UINavigationItem+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UINavigationItem+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIScreen+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIScreen+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UISearchBar+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UISearchBar+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIView+FS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/UIView+FS.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/WJExtensionConfig.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Category/WJExtensionConfig.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/FSExtension/Tools/FSHeader.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/ViewController.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,6 +62,7 @@
       <workItem from="1572226064437" duration="1008000" />
       <workItem from="1572228125461" duration="381000" />
       <workItem from="1572248675818" duration="311000" />
+      <workItem from="1572259290819" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="add cocoapods">
       <created>1571998639721</created>

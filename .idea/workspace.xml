@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="release 0.0.2" />
+    <list default="true" id="129d213e-22a7-4e95-9f69-d50f988e8e3a" name="Default Changelist" comment="release 0.0.2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtension.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/AppDelegate.h" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/AppDelegate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/AppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/AppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/Assets.xcassets/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/Assets.xcassets/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/Base.lproj/LaunchScreen.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/Base.lproj/LaunchScreen.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/ViewController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/ViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FSExtension/FSExtension/main.m" beforeDir="false" afterPath="$PROJECT_DIR$/FSExtensionDemo/FSExtensionDemo/main.m" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +36,7 @@
   <component name="ProjectId" id="1SguDB7T0WB357kH7ScSWa9HgMr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -54,6 +71,7 @@
       <updated>1571997437666</updated>
       <workItem from="1571997439073" duration="119000" />
       <workItem from="1571997576595" duration="2805000" />
+      <workItem from="1572226064437" duration="771000" />
     </task>
     <task id="LOCAL-00001" summary="add cocoapods">
       <created>1571998639721</created>
@@ -80,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

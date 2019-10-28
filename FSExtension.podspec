@@ -92,7 +92,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.source_files  = "FSExtension/**/*.{h,m}"
-  #spec.exclude_files = "FSExtension/Exclude"
+  #spec.exclude_files = "FSExtension/FSExtensionDemo"
 
   # spec.public_header_files = "Classes/**/*.h"
 

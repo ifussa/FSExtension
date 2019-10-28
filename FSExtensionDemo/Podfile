@@ -8,6 +8,6 @@ target 'FSExtensionDemo' do
   use_frameworks!
 
   # Pods for FSExtensionDemo
-    pod 'MBProgressHUD'
+  #   pod 'MBProgressHUD'
     pod 'MJExtension'
 end

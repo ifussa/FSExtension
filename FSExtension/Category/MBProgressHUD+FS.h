@@ -5,7 +5,7 @@
 //  Copyright (c) 2013年 com.ifussa. All rights reserved.
 //
 
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "MBProgressHUD.h"
 
 @interface MBProgressHUD (FS)
 /**

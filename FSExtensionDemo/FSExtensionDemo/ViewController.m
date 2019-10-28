@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "FSHeader.h"
+//#import "FSHeader.h"
 
 
 @interface ViewController ()
@@ -21,6 +21,9 @@
     UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:label];
     label.text = @"DEMO";
+    label.textAlignment = NSTextAlignmentCenter;
+
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 

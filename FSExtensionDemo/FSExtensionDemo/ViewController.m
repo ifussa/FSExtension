@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "FSHeader.h"
+
 
 @interface ViewController ()
 
@@ -16,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:label];
+    label.text = @"DEMO";
 }
 
 

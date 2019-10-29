@@ -44,7 +44,6 @@ typedef NS_ENUM(NSInteger, FSButtonImageTitleStyle) {
  * @param normalColor 颜色
  * @param highlightedColor 高亮颜色
  * @param backgroundImageName 背景图片
- * @return
  */
 - (instancetype)fs_textButtonWithTile: (NSString *)title fontSize:(CGFloat)fontSize normalColor:(UIColor *)normalColor highlightedColor:(UIColor *)highlightedColor backgroundImageName:(NSString *)backgroundImageName;
 /**
@@ -53,7 +52,6 @@ typedef NS_ENUM(NSInteger, FSButtonImageTitleStyle) {
  * @param fontSize 文字大小
  * @param normalColor 颜色
  * @param highlightedColor 高亮颜色
- * @return
  */
 - (instancetype)fs_textButtonWithTile: (NSString *)title fontSize:(CGFloat)fontSize normalColor:(UIColor *)normalColor highlightedColor:(UIColor *)highlightedColor;
 
@@ -61,7 +59,6 @@ typedef NS_ENUM(NSInteger, FSButtonImageTitleStyle) {
  * 创建图片按钮
  * @param imageName 按钮图片
  * @param backgroundImageName 背景图片
- * @return 按钮
  */
 - (instancetype)fs_imageButtonWithImageName: (NSString *)imageName  backgroundImageName:(NSString *)backgroundImageName;
 @end

@@ -81,7 +81,7 @@
 @end
 
 
-
+#pragma mark - FSUtil
 @implementation NSObject (FSUtil)
 - (NSString *)fs_getDocumentPath {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -345,12 +345,12 @@
     if ([deviceString isEqualToString:@"iPhone9,2"]) return @"港行、国行iPhone 7 Plus";
     if ([deviceString isEqualToString:@"iPhone9,3"]) return @"美版、台版iPhone 7";
     if ([deviceString isEqualToString:@"iPhone9,4"]) return @"美版、台版iPhone 7 Plus";
-    if ([deviceString isEqualToString:@"iPhone10,1"]) return @"iPhone 8";
-    if ([deviceString isEqualToString:@"iPhone10,4"]) return @"iPhone 8";
-    if ([deviceString isEqualToString:@"iPhone10,2"]) return @"iPhone 8 Plus";
-    if ([deviceString isEqualToString:@"iPhone10,5"]) return @"iPhone 8 Plus";
-    if ([deviceString isEqualToString:@"iPhone10,3"]) return @"iPhone X";
-    if ([deviceString isEqualToString:@"iPhone10,6"]) return @"iPhone X";
+    if ([deviceString isEqualToString:@"iPhone10,1"]) return @"iPhone 8 (CDMA)";
+    if ([deviceString isEqualToString:@"iPhone10,4"]) return @"iPhone 8 (GSM)";
+    if ([deviceString isEqualToString:@"iPhone10,2"]) return @"iPhone 8 Plus (CDMA)";
+    if ([deviceString isEqualToString:@"iPhone10,5"]) return @"iPhone 8 Plus (GSM)";
+    if ([deviceString isEqualToString:@"iPhone10,3"]) return @"iPhone X (CDMA)";
+    if ([deviceString isEqualToString:@"iPhone10,6"]) return @"iPhone X (GSM)";
     if ([deviceString isEqualToString:@"iPod1,1"]) return @"iPod Touch 1G";
     if ([deviceString isEqualToString:@"iPod2,1"]) return @"iPod Touch 2G";
     if ([deviceString isEqualToString:@"iPod3,1"]) return @"iPod Touch 3G";
@@ -392,6 +392,124 @@
     return deviceString;
 }
 
+
+
++ (NSArray *)fs_objProperties{
+    /*
+     class_copyIvarList(__unsafe_unretained Class cls, unsigned int *outCount)       成员变量
+     class_copyMethodList(__unsafe_unretained Class cls, unsigned int *outCount)     方法
+     class_copyPropertyList(__unsafe_unretained Class cls, unsigned int *outCount)   属性
+     class_copyProtocolList(__unsafe_unretained Class cls, unsigned int *outCount)   协议
+     */
+
+    /* 调用运行时方法,取得类的属性列表
+     返回值 : 所有属性的数组 (是一个C数组指针:C语言中数组的名字就是首元素的地址)
+     参数 1 :  要获取的类
+     参数 2 :  类属性的个数指针
+     */
+    unsigned int count = 0;
+    objc_property_t *propertyList = class_copyPropertyList([self class], &count);
+
+    // 用来存放所有属性的数组
+    NSMutableArray *mArr = [NSMutableArray array];
+
+    // 遍历所有属性
+    for (unsigned int i = 0; i < count; i ++) {
+
+        // 1. 从数组中取得所有属性
+        objc_property_t property = propertyList[i];
+
+        const char *cName = property_getName(property);
+
+        NSString *propertyName = [NSString stringWithCString:cName encoding:NSUTF8StringEncoding];
+
+        [mArr addObject:propertyName];
+    }
+
+    // C语言中 retain/create/copy 都需要release, 可以option+click方法名,通过API描述中找到释放方法
+    // 例如这里的提示: You must free the array with free().
+    free(propertyList);
+    return mArr.copy;
+}
+
++ (void)fs_logPrivatePropertiesWithClass:(NSString *)className{
+    unsigned int count = 0;
+    objc_property_t *properties = class_copyPropertyList([NSClassFromString(className) class], &count);
+    for (int i=0; i<count; i++) {
+        objc_property_t pty = properties[i];
+        //获得所有的属性
+        const char *cname = property_getName(pty);
+        NSLog(@"%@",[[NSString alloc] initWithCString:cname encoding:NSUTF8StringEncoding]);
+    }
+    free(properties);
+}
+
++ (void)fs_logPrivateIvarsWithClass:(NSString *)className{
+    // 所有属性的个数
+    unsigned int count = 0;
+    //所有属性的数组 ,数组 char[] char *
+    Ivar *ivars = class_copyIvarList([NSClassFromString(className) class], &count);
+    for (int i=0; i<count; i++) {
+        Ivar ivar = ivars[i];//获取到每一个属性
+        //获取所有私有属性
+        const char *cname = ivar_getName(ivar);//C语言的字符串
+        NSLog(@"%@",[[NSString alloc] initWithCString:cname encoding:NSUTF8StringEncoding]);
+    }
+    free(ivars);
+}
+
 @end
 
+
+#define BKTimeDelay(t) dispatch_time(DISPATCH_TIME_NOW, (uint64_t)(NSEC_PER_SEC * t))
+
+#pragma mark - FSDelay
+@implementation NSObject (FSDelay)
+- (id)fs_performBlock:(void (^)(id obj))block afterDelay:(NSTimeInterval)delay {
+    return [self fs_performBlock:block onQueue:dispatch_get_main_queue() afterDelay:delay];
+}
+
++ (id)fs_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
+    return [NSObject fs_performBlock:block onQueue:dispatch_get_main_queue() afterDelay:delay];
+}
+
+- (id)fs_performBlockInBackground:(void (^)(id obj))block afterDelay:(NSTimeInterval)delay {
+    return [self fs_performBlock:block onQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) afterDelay:delay];
+}
+
++ (id)fs_performBlockInBackground:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
+    return [NSObject fs_performBlock:block onQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) afterDelay:delay];
+}
+
+- (id)fs_performBlock:(void (^)(id obj))block onQueue:(dispatch_queue_t)queue afterDelay:(NSTimeInterval)delay {
+    NSParameterAssert(block != nil);
+    __block BOOL cancelled = NO;
+    void (^wrapper)(BOOL) = ^(BOOL cancel) {
+        if (cancel) {
+            cancelled = YES;
+            return;
+        }
+        if (!cancelled) block(self);
+    };
+    dispatch_after(BKTimeDelay(delay), queue, ^{
+        wrapper(NO);
+    });
+    return [wrapper copy];
+}
+
++ (id)fs_performBlock:(void (^)(void))block onQueue:(dispatch_queue_t)queue afterDelay:(NSTimeInterval)delay {
+    NSParameterAssert(block != nil);
+    __block BOOL cancelled = NO;
+    void (^wrapper)(BOOL) = ^(BOOL cancel) {
+        if (cancel) {
+            cancelled = YES;
+            return;
+        }
+        if (!cancelled) block();
+    };
+    dispatch_after(BKTimeDelay(delay), queue, ^{ wrapper(NO); });
+    return [wrapper copy];
+}
+
+@end
 

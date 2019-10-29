@@ -18,8 +18,7 @@
 @interface NSMutableArray (FSRuntime)
 @end
 
-
-
+#pragma mark - FSUtil
 @interface NSObject (FSUtil)
 /**
  * 获取Documents目录
@@ -153,5 +152,44 @@
  * 获取设备名称
  */
 - (NSString *)fs_getDeviceName;
+
+
+#pragma mark - Print
+/**
+ *  获取类的所有属性
+ *
+ *  @return 存放属性的数组
+ */
++ (NSArray *)fs_objProperties;
+
+/**
+ *  打印类的所有属性
+ *
+ *  @param className 类名
+ */
++ (void)fs_logPrivatePropertiesWithClass:(NSString *)className;
+
+/**
+ *  打印类的所有成员变量
+ *
+ *  @param className 类名
+ */
++ (void)fs_logPrivateIvarsWithClass:(NSString *)className;
+
+@end
+
+#pragma mark - FSDelay
+@interface NSObject (FSDelay)
+/**
+ *delay时间后在主线程执行某些操作
+ */
+- (id)fs_performBlock:(void (^)(id obj))block afterDelay:(NSTimeInterval)delay;
++ (id)fs_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
+
+/**
+ *delay时间后在后台线程执行某些操作
+ */
+- (id)fs_performBlockInBackground:(void (^)(id obj))block afterDelay:(NSTimeInterval)delay;
++ (id)fs_performBlockInBackground:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
 
 @end

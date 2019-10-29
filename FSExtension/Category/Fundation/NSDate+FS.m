@@ -127,6 +127,37 @@
     return week;
 }
 
+#pragma mark - Compare
+
+- (BOOL)isToday {
+    return [self fs_isToday];
+}
+
+- (BOOL)isTomorrow {
+    return [self fs_isTomorrow];
+}
+
+- (BOOL)isYesterday {
+    return [self fs_isYesterday];
+}
+
+- (BOOL)fs_isToday {
+    return [[NSCalendar currentCalendar] isDateInToday:self];
+}
+
+- (BOOL)fs_isYesterday {
+    return [[NSCalendar currentCalendar] isDateInYesterday:self];
+}
+
+- (BOOL)fs_isTomorrow {
+    return [[NSCalendar currentCalendar] isDateInTomorrow:self];
+}
+
+/// 两个日期是否是同一天
++ (BOOL)fs_isDate:(NSDate *)date1 inSameDayAsDate:(NSDate *)date2 {
+    return [[NSCalendar currentCalendar] isDate:date1 inSameDayAsDate:date2];
+}
+
 
 
 
@@ -271,6 +302,10 @@
 
 + (NSDate *)fs_dateTomorrow {
     return [NSDate fs_dateWithDaysFromNow:1];
+}
+
++ (NSDate *)fs_dateToday {
+    return [NSDate fs_dateWithDaysFromNow:0];
 }
 
 + (NSDate *)fs_dateYesterday {

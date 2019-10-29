@@ -15,4 +15,9 @@ typedef void (^FSNavigationControllerCompletionBlock)();
 - (void)fs_pushViewController:(UIViewController *)viewController completion:(FSNavigationControllerCompletionBlock)completionHandler;
 
 - (void)fs_pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(FSNavigationControllerCompletionBlock)completionHandler;
+
+
+/// 自定义全屏拖拽返回手势
+@property (nonatomic, strong, readonly) UIPanGestureRecognizer *fs_popGestureRecognizer;
+
 @end

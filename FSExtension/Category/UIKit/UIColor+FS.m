@@ -71,4 +71,26 @@
     return [self fs_colorWithHexString:color alpha:1.0f];
 }
 
++ (id)fs_colorWithHex:(unsigned int)hex {
+    return [UIColor fs_colorWithHex:hex alpha:1.0];
+}
+
++ (id)fs_colorWithHex:(unsigned int)hex alpha:(float)alpha {
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0 green:((float)((hex & 0xFF00) >> 8)) / 255.0 blue:((float)(hex & 0xFF)) / 255.0 alpha:alpha];
+}
+
+- (NSUInteger)fs_rgbaValue {
+    CGFloat r, g, b, a;
+    if ([self getRed:&r green:&g blue:&b alpha:&a]) {
+        NSUInteger rr = (NSUInteger)(r * 255 + 0.5);
+        NSUInteger gg = (NSUInteger)(g * 255 + 0.5);
+        NSUInteger bb = (NSUInteger)(b * 255 + 0.5);
+        NSUInteger aa = (NSUInteger)(a * 255 + 0.5);
+
+        return (rr << 24) | (gg << 16) | (bb << 8) | aa;
+    } else {
+        return 0;
+    }
+}
+
 @end

@@ -32,6 +32,19 @@
 - (NSInteger)fs_second;
 - (NSString *)fs_weekday;
 
+#pragma mark - Compare
+
+@property (nonatomic,assign, readonly)BOOL isToday;///< 是否是今天
+@property (nonatomic,assign, readonly)BOOL isYesterday;///< 是否是昨天
+@property (nonatomic,assign, readonly)BOOL isTomorrow;///< 是否是明天
+- (BOOL)fs_isToday;
+- (BOOL)fs_isYesterday;
+- (BOOL)fs_isTomorrow;
+
+/// 两个日期是否是同一天
++ (BOOL)fs_isDate:(NSDate *)date1 inSameDayAsDate:(NSDate *)date2;
+
+
 
 #pragma mark - Time string
 - (NSString *)fs_timeHourMinute;
@@ -59,6 +72,7 @@
 
 #pragma mark - Relative dates from the date
 + (NSDate *)fs_dateTomorrow;
++ (NSDate *)fs_dateToday;
 + (NSDate *)fs_dateYesterday;
 + (NSDate *)fs_dateWithDaysFromNow: (NSInteger)days;
 + (NSDate *)fs_dateWithDaysBeforeNow: (NSInteger)days;

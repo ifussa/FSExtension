@@ -43,7 +43,7 @@
 
 /**
  * 显示失败Toast
- * @param success 提示文字
+ * @param error 提示文字
  */
 + (void)fs_showError:(NSString *)error;
 

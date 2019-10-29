@@ -9,6 +9,11 @@
 #ifndef FSHeader_h
 #define FSHeader_h
 
+/// tool
+#import "FSLog.h"
+
+
+/// category
 #import "MBProgressHUD+FS.h"
 #import "NSDate+FS.h"
 #import "NSObject+FS.h"
@@ -25,6 +30,17 @@
 #import "UIScreen+FS.h"
 #import "UISearchBar+FS.h"
 #import "UIView+FS.h"
+#import "NSArray+FS.h"
+#import "NSDictionary+FS.h"
+#import "NSFileManager+FS.h"
+#import "NSTimer+FS.h"
+#import "UIAlertView+FS.h"
+#import "UIControl+FS.h"
+#import "UIGestureRecognizer+FS.h"
+#import "UITextField+FS.h"
+#import "UIWindow+FS.h"
+#import "UIApplication+FS.h"
+
 
 
 #endif /* FSHeader_h */

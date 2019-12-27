@@ -23,7 +23,8 @@
 
 #pragma mark - 校验
 - (BOOL)fs_empty;
-- (BOOL)fs_eq:(NSString *)other;
+- (BOOL)fs_isNotEmpty;
+- (BOOL)fs_equalTo:(NSString *)other;
 - (BOOL)fs_isValueOf:(NSArray *)array;
 - (BOOL)fs_isValueOf:(NSArray *)array caseInsens:(BOOL)caseInsens;
 - (BOOL)fs_isNumber;

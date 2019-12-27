@@ -6,9 +6,9 @@
 //  Copyright © 2019 Fussa. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FSBaseViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : FSBaseViewController
 
 
 @end

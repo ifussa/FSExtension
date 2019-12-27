@@ -26,14 +26,12 @@
     return [self length] > 0 ? NO : YES;
 }
 
-
-- (BOOL)fs_eq:(NSString *)other {
-    return [self isEqualToString:other];
+- (BOOL)fs_isNotEmpty {
+    return ![self fs_empty];
 }
 
-
-- (BOOL)fs_isValueOf:(NSArray *)array {
-    return [self fs_isValueOf:array caseInsens:NO];
+- (BOOL)fs_equalTo:(NSString *)other {
+    return [self isEqualToString:other];
 }
 
 - (BOOL)fs_isValueOf:(NSArray *)array caseInsens:(BOOL)caseInsens {
@@ -48,6 +46,10 @@
     }
 
     return NO;
+}
+
+- (BOOL)fs_isValueOf:(NSArray *)array {
+    return [self fs_isValueOf:array caseInsens:NO];
 }
 
 - (BOOL)fs_isNumber {

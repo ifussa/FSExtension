@@ -1,31 +1,27 @@
 //
-//  ViewController.m
+//  FSCategoryViewController.m
 //  FSExtensionDemo
 //
-//  Created by Fussa on 2019/10/28.
-//  Copyright © 2019 Fussa. All rights reserved.
+// Created by 曾福生 on 2019/12/27.
+// Copyright (c) 2019 Fussa. All rights reserved.
 //
-
-#import "ViewController.h"
-#import "FSHeader.h"
-#import "FSGlobal.h"
 #import "FSCategoryViewController.h"
-#import "FSToolViewController.h"
+#import "FSArrayViewController.h"
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface FSCategoryViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, strong) NSArray *dataArray;
 @end
 
-@implementation ViewController
+@implementation FSCategoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Category";
 
     self.dataArray = @[
-            @[@"Category", [FSCategoryViewController class]],
-            @[@"Tool", [FSToolViewController class]]
+            @[@"Array", [FSArrayViewController class]],
     ];
 
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];

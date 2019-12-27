@@ -7,6 +7,7 @@
 //
 
 #import "NSDate+FS.h"
+#import "NSCalendar+FS.h"
 
 #define DATE_COMPONENTS (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
@@ -141,6 +142,10 @@
     return [self fs_isYesterday];
 }
 
+- (BOOL)isWeekend {
+    return [self fs_isWeekend];
+}
+
 - (BOOL)fs_isToday {
     return [[NSCalendar currentCalendar] isDateInToday:self];
 }
@@ -153,13 +158,15 @@
     return [[NSCalendar currentCalendar] isDateInTomorrow:self];
 }
 
+- (BOOL)fs_isWeekend {
+    return [[NSCalendar currentCalendar] isDateInWeekend:self];
+}
+
+
 /// 两个日期是否是同一天
 + (BOOL)fs_isDate:(NSDate *)date1 inSameDayAsDate:(NSDate *)date2 {
     return [[NSCalendar currentCalendar] isDate:date1 inSameDayAsDate:date2];
 }
-
-
-
 
 #pragma mark - Time string
 - (NSString *)fs_timeHourMinute {
@@ -395,4 +402,147 @@
 + (NSString *)dbFormatString {
     return [NSDate fs_timestampFormatString];
 }
+@end
+
+
+
+@implementation FSInterval
+
+@end
+
+@implementation NSDate (FSInterval)
+
+- (FSInterval *)fs_intervalSinceDate:(NSDate *)date {
+
+    NSInteger interval = (NSInteger) [self timeIntervalSinceDate:date];
+    // 1分钟 = 60秒
+    NSInteger secondsPerMinute = 60;
+    // 1小时 = 60分钟
+    NSInteger secondsPerHour = 60 * secondsPerMinute;
+    // 1天 = 24小时
+    NSInteger secondsPerDay = 24 * secondsPerMinute;
+
+    FSInterval *aStruct = [[FSInterval alloc] init];
+    aStruct.day = interval / secondsPerDay;
+    aStruct.hour = (interval % secondsPerDay) / secondsPerHour;
+    aStruct.minute = ((interval % secondsPerDay) % secondsPerHour) / secondsPerMinute;
+    aStruct.second = interval % secondsPerMinute;
+
+    return aStruct;
+}
+
+- (void)fs_intervalSinceDate:(NSDate *)date day:(NSInteger *)dayP hour:(NSInteger *)hourP minute:(NSInteger *)minuteP second:(NSInteger *)secondP {
+    NSInteger interval = (NSInteger) [self timeIntervalSinceDate:date];
+    // 1分钟 = 60秒
+    NSInteger secondsPerMinute = 60;
+    // 1小时 = 60分钟
+    NSInteger secondsPerHour = 60 * secondsPerMinute;
+    // 1天 = 24小时
+    NSInteger secondsPerDay = 24 * secondsPerMinute;
+
+    *dayP = interval / secondsPerDay;
+    *hourP = (interval % secondsPerDay) / secondsPerHour;
+    *minuteP = ((interval % secondsPerDay) % secondsPerHour) / secondsPerMinute;
+    *secondP = interval / secondsPerMinute;
+}
+
+- (BOOL)fs_isInToday {
+    NSCalendar *calendar = [NSCalendar fs_calendar];
+    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
+    NSDateComponents *selfComponents = [calendar components:unit fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:unit fromDate:[NSDate date]];
+    return [selfComponents isEqual:dateComponents];
+}
+
+- (BOOL)fs_isInYesterday {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyyMMdd";
+
+    // 获取只有年月日的字符串对象
+    NSString *selfStr = [formatter stringFromDate:self];
+    NSString *nowStr = [formatter stringFromDate:[NSDate date]];
+
+    // 获取只有年月日的日期对象
+    NSDate *selfDate = [formatter dateFromString:selfStr];
+    NSDate *nowDate = [formatter dateFromString:nowStr];
+
+    NSCalendar *calendar = [NSCalendar fs_calendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitDay fromDate:selfDate toDate:nowDate options:0];
+    return components.day == 1;
+}
+
+- (BOOL)fs_isInTomorrow {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyyMMdd";
+
+    // 获取只有年月日的字符串对象
+    NSString *selfStr = [formatter stringFromDate:self];
+    NSString *nowStr = [formatter stringFromDate:[NSDate date]];
+
+    // 获取只有年月日的日期对象
+    NSDate *selfDate = [formatter dateFromString:selfStr];
+    NSDate *nowDate = [formatter dateFromString:nowStr];
+
+    NSCalendar *calendar = [NSCalendar fs_calendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitDay fromDate:selfDate toDate:nowDate options:0];
+    return components.day == 1;
+}
+
+- (BOOL)fs_isInThisWeek {
+    NSCalendar *calendar = [NSCalendar fs_calendar];
+    NSCalendarUnit unit = NSCalendarUnitWeekday | NSCalendarUnitMonth | NSCalendarUnitYear | kCFCalendarUnitDay | kCFCalendarUnitHour | kCFCalendarUnitMinute ;
+
+    //1.获得当前时间的 年月日
+    NSDateComponents *nowComponents = [calendar components:unit fromDate:[NSDate date]];
+    NSDateComponents *sourceComponents = [calendar components:unit fromDate:self];
+
+    // 对比时间差
+    NSDateComponents *dateCom = [calendar components:unit fromDate:[NSDate date] toDate:self options:0];
+    NSInteger subDay = labs(dateCom.day);
+    NSInteger subMonth = labs(dateCom.month);
+    NSInteger subYear = labs(dateCom.year);
+
+    if (subYear == 0 && subMonth == 0) { //当相关的差值等于零的时候说明在一个年、月、日的时间范围内，不是按照零点到零点的时间算的
+        if (subDay > 6) { //相差天数大于6肯定不在一周内
+            return NO;
+        } else { //相差的天数大于或等于后面的时间所对应的weekday则不在一周内
+            if (dateCom.day >= 0 && dateCom.hour >=0 && dateCom.minute >= 0) { //比较的时间大于当前时间
+                //西方一周的开始是从周日开始算的，周日是1，周一是2，而我们是从周一开始算新的一周
+                NSInteger chinaWeekday = sourceComponents.weekday == 1 ? 7 : sourceComponents.weekday - 1;
+                if (subDay >= chinaWeekday) {
+                    return NO;
+                } else {
+                    return YES;
+                }
+            } else {
+                NSInteger chinaWeekday = sourceComponents.weekday == 1 ? 7 : nowComponents.weekday - 1;
+                if (subDay >= chinaWeekday) { //比较的时间比当前时间小，已经过去的时间
+                    return NO;
+                } else {
+                    return YES;
+                }
+            }
+        }
+    } else {
+        //时间范围差值超过了一年或一个月的时间范围肯定就不在一个周内了
+        return NO;
+    }
+}
+
+- (BOOL)fs_isInThisMonth {
+    NSCalendar *calendar = [NSCalendar fs_calendar];
+    NSCalendarUnit unit = NSCalendarUnitMonth | NSCalendarUnitYear;
+    NSDateComponents *selfComponents = [calendar components:unit fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:unit fromDate:[NSDate date]];
+    return [selfComponents isEqual:dateComponents];
+}
+
+- (BOOL)fs_isInThisYear {
+    NSCalendar *calendar = [NSCalendar fs_calendar];
+    NSCalendarUnit unit =  NSCalendarUnitYear;
+    NSDateComponents *selfComponents = [calendar components:unit fromDate:self];
+    NSDateComponents *dateComponents = [calendar components:unit fromDate:[NSDate date]];
+    return [selfComponents isEqual:dateComponents];
+}
+
 @end

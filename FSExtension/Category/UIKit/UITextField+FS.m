@@ -54,4 +54,43 @@ static const void *FSTextFieldAddChangedKey = &FSTextFieldAddChangedKey;
     }
 }
 
+
+- (void)fs_setColor:(nullable UIColor *)color font:(nullable UIFont *)font {
+    self.textColor = color;
+    self.font = font;
+}
+
+#pragma mark - placeHolder
+
+/// 设置字体
+- (void)fs_setPlaceholderFont:(UIFont *)font {
+    [self fs_setPlaceholderColor:nil font:font];
+}
+
+/// 设置颜色
+- (void)fs_setPlaceholderColor:(UIColor *)color {
+    [self fs_setPlaceholderColor:color font:nil];
+}
+
+/// 设置颜色和字体
+- (void)fs_setPlaceholderColor:(nullable UIColor *)color font:(nullable UIFont *)font {
+    if ([self fs_checkPlaceholderEmpty]) {
+        return;
+    }
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.placeholder];
+    if (color) {
+        [attributedString addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, self.placeholder.length)];
+    }
+    if (font) {
+        [attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, self.placeholder.length)];
+    }
+
+    [self setAttributedPlaceholder:attributedString];
+}
+
+/// 检查是否为空
+- (BOOL)fs_checkPlaceholderEmpty {
+    return (self.placeholder == nil) || ([[self.placeholder stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0);
+}
+
 @end

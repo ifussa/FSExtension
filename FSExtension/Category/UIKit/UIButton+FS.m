@@ -7,6 +7,9 @@
 //
 
 #import "UIButton+FS.h"
+#import <objc/runtime.h>
+
+static const char *fs_clickWithBlockKey;
 
 @implementation UIButton (FS)
 
@@ -232,4 +235,17 @@
     }
 }
 
+#pragma mark - 事件
+- (void)fs_clickWithBlock:(void (^)(void))block {
+    self.userInteractionEnabled = YES;
+    [self addTarget:self action:@selector(p_clickHandle:) forControlEvents:UIControlEventTouchUpInside];
+    objc_setAssociatedObject(self, &fs_clickWithBlockKey, block, OBJC_ASSOCIATION_COPY);
+}
+
+- (void)p_clickHandle:(UIButton *)button {
+    void(^action)(void) =  objc_getAssociatedObject(self, &fs_clickWithBlockKey);
+    if (action) {
+        action();
+    }
+}
 @end

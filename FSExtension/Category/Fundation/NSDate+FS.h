@@ -34,16 +34,18 @@
 
 #pragma mark - Compare
 
-@property (nonatomic,assign, readonly)BOOL isToday;///< 是否是今天
-@property (nonatomic,assign, readonly)BOOL isYesterday;///< 是否是昨天
-@property (nonatomic,assign, readonly)BOOL isTomorrow;///< 是否是明天
+@property (nonatomic,assign, readonly)BOOL isToday;        ///< 是否是今天
+@property (nonatomic,assign, readonly)BOOL isYesterday;    ///< 是否是昨天
+@property (nonatomic,assign, readonly)BOOL isTomorrow;     ///< 是否是明天
+@property (nonatomic,assign, readonly)BOOL isWeekend;      ///< 是否是周末
+
 - (BOOL)fs_isToday;
 - (BOOL)fs_isYesterday;
 - (BOOL)fs_isTomorrow;
+- (BOOL)fs_isWeekend;
 
 /// 两个日期是否是同一天
 + (BOOL)fs_isDate:(NSDate *)date1 inSameDayAsDate:(NSDate *)date2;
-
 
 
 #pragma mark - Time string
@@ -96,4 +98,40 @@
 - (NSString *)fs_string;
 - (NSString *)fs_stringCutSeconds;
 
+@end
+
+
+@interface FSInterval : NSObject
+/** 天 */
+@property(nonatomic, assign) NSInteger day;
+/** 小时 */
+@property(nonatomic, assign) NSInteger hour;
+/** 分钟 */
+@property(nonatomic, assign) NSInteger minute;
+/** 秒 */
+@property(nonatomic, assign) NSInteger second;
+@end
+
+@interface NSDate (FSInterval)
+
+- (FSInterval *)fs_intervalSinceDate:(NSDate *)date;
+- (void)fs_intervalSinceDate:(NSDate *)date day:(NSInteger *)dayP hour:(NSInteger *)hourP minute:(NSInteger *)minuteP second:(NSInteger *)secondP;
+
+/// 是否为今天
+- (BOOL)fs_isInToday;
+
+/// 是否为昨天
+- (BOOL)fs_isInYesterday;
+
+/// 是否为明天
+- (BOOL)fs_isInTomorrow;
+
+/// 是否为本周
+- (BOOL)fs_isInThisWeek;
+
+/// 是否为本月
+- (BOOL)fs_isInThisMonth;
+
+/// 是否为今年
+- (BOOL)fs_isInThisYear;
 @end

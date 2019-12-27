@@ -34,4 +34,10 @@
  * @param title 按钮标题
  */
 - (void)fs_setCancelButtonWithTitle:(NSString *)title;
+
+/**
+ * 获取SearchBar系统自带的TextField
+ */
+- (void)fs_getSearchTextFieldWithCompletionBlock:(void(^)(UITextField *textField))completionBlock;
+
 @end

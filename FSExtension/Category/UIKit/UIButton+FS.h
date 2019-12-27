@@ -61,4 +61,9 @@ typedef NS_ENUM(NSInteger, FSButtonImageTitleStyle) {
  * @param backgroundImageName 背景图片
  */
 - (instancetype)fs_imageButtonWithImageName: (NSString *)imageName  backgroundImageName:(NSString *)backgroundImageName;
+
+#pragma mark - 事件
+- (void)fs_clickWithBlock:(void (^)(void))block;
+
+
 @end

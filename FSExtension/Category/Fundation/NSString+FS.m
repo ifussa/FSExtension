@@ -20,6 +20,10 @@
     return ceil(boundingBox.size.width);
 }
 
+- (CGFloat)fs_getWidthWithFont:(UIFont *)font {
+    return [self fs_getWidthWithConstrainedHeight:CGFLOAT_MAX font:font];
+}
+
 #pragma mark - 校验
 
 - (BOOL)fs_empty {
@@ -111,6 +115,23 @@
 - (NSString *)fs_substringFromIndex:(NSUInteger)from untilString:(NSString *)string {
 
     return [self substringFromIndex:from untilString:string endOffset:NULL];
+}
+
++ (BOOL)fs_isEmpty:(nullable NSString *)string {
+    if (string == nil || string == NULL) {
+        return YES;
+    }
+    if ([string isKindOfClass:[NSNull class]] || ![string isKindOfClass:[NSString class]] || [string isEqualToString:@""]) {
+        return YES;
+    }
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
+        return YES;
+    }
+    return NO;
+}
+
++ (BOOL)fs_isNotEmpty:(nullable NSString *)string {
+    return ![self fs_isEmpty:string];
 }
 
 - (NSString *)substringFromIndex:(NSUInteger)from untilString:(NSString *)string endOffset:(NSUInteger *)endOffset {

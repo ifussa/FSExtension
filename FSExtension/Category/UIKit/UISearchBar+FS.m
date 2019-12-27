@@ -61,5 +61,29 @@
     [cancelButton setTitle:title forState:UIControlStateNormal];
 }
 
+/// 修改SearchBar系统自带的TextField
+- (void)fs_getSearchTextFieldWithCompletionBlock:(void(^)(UITextField *textField))completionBlock {
+    if (!completionBlock) {
+        return;
+    }
+    UITextField *textField = [self fs_findTextFieldWithView:self];
+    if (textField) {
+        completionBlock(textField);
+    }
+}
+
+/// 递归遍历UISearchBar的子视图，找到UITextField
+- (UITextField *)fs_findTextFieldWithView:(UIView *)view {
+    for (UIView *subview in view.subviews) {
+        if ([subview isKindOfClass:[UITextField class]]) {
+            return (UITextField *)subview;
+        }else if (subview.subviews.count > 0) {
+            return [self fs_findTextFieldWithView:subview];
+        }
+    }
+    return nil;
+}
+
+
 
 @end

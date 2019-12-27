@@ -10,8 +10,10 @@
 		5D44A020CC940F64A15B9164 /* UISearchBar+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A24C4D98ED63D53CE3B0 /* UISearchBar+FS.m */; };
 		5D44A12F0B5E8BBA663D33B4 /* UITextField+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44ADDB10D5BFDB940F2EB0 /* UITextField+FS.m */; };
 		5D44A24BF41D05CF1297D654 /* NSArray+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A46E7D4023D92E252264 /* NSArray+FS.m */; };
+		5D44A2E2CA4C4BFFA1E4D192 /* NSParagraphStyle+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A561CBE347D10D324FBD /* NSParagraphStyle+FS.m */; };
 		5D44A2EDC3B25E5326C3ABDC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A7D8327B85547AF85894 /* MBProgressHUD.m */; };
 		5D44A35F93286292698FE5E3 /* NSFileManager+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A92F8EB5B2B88E28CE4E /* NSFileManager+FS.m */; };
+		5D44A43D984EBD9E4C5B7584 /* FSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44AB0607C7D33F0803E36D /* FSTool.m */; };
 		5D44A480B272056954F6754C /* UIImage+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A58547B4C98BB4B1A25C /* UIImage+FS.m */; };
 		5D44A4C73E6E511362AF7AEA /* FSBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A4428E1C67365F42B694 /* FSBase64.m */; };
 		5D44A4FF76733D6727C9CD2B /* FSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A8D097846B9E4F0E67AA /* FSApp.m */; };
@@ -30,12 +32,15 @@
 		5D44AB327E92EBE5B3136C64 /* FSArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A30C370200ECA3D805F4 /* FSArrayViewController.m */; };
 		5D44AB476019A5E26FAF6FAC /* UINavigationItem+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A6E94ECDA6987C8BECBF /* UINavigationItem+FS.m */; };
 		5D44AB857317C56177683505 /* UIScreen+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44AD479A70C8AC7759313D /* UIScreen+FS.m */; };
+		5D44ABC55356E32675B91B16 /* UIFont+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A00F8DB756C03BA7143E /* UIFont+FS.m */; };
 		5D44ABC7703CF462E0739EA0 /* NSDate+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A64EB22AF787E96E691E /* NSDate+FS.m */; };
 		5D44AC5DE2BDE84F3D677F7C /* UIColor+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44AB5780F5D369F8D585BD /* UIColor+FS.m */; };
 		5D44AC6C900569B8C0D85DDF /* NSObject+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A351F8070398A2FDC4DC /* NSObject+FS.m */; };
 		5D44AC80737EFFE2F3669D29 /* UIGestureRecognizer+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A8ABC9DE337A0E1FCC89 /* UIGestureRecognizer+FS.m */; };
 		5D44AC95F2599F19E4BBBAE8 /* UIView+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A7AC0C0DC7F8E4E7982D /* UIView+FS.m */; };
 		5D44ACB7DB6B08E326EA2B56 /* NSData+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44AB333A5C035E69897F3B /* NSData+FS.m */; };
+		5D44AD62D06E8E1BAC4C3FCB /* UIViewController+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44AE913413D8E0FA5E4D80 /* UIViewController+FS.m */; };
+		5D44ADBFA48757B1FF3501D9 /* NSCalendar+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A416EF561B930C684663 /* NSCalendar+FS.m */; };
 		5D44ADD2C434331ED09087A0 /* UIBarButtonItem+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A97C33881EC825952DFE /* UIBarButtonItem+FS.m */; };
 		5D44AE7729947CD180D3F3F3 /* UINavigationController+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A367D64BD62184707C5F /* UINavigationController+FS.m */; };
 		5D44AE841918C6372521208E /* UILabel+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A343021F3B85E58476D2 /* UILabel+FS.m */; };
@@ -55,13 +60,17 @@
 		19013E0885EC7FC09A54C07E /* Pods-FSExtensionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSExtensionDemo.debug.xcconfig"; path = "Target Support Files/Pods-FSExtensionDemo/Pods-FSExtensionDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		1EF4CB9C27008A098EA63BF2 /* Pods-FSExtensionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSExtensionDemo.release.xcconfig"; path = "Target Support Files/Pods-FSExtensionDemo/Pods-FSExtensionDemo.release.xcconfig"; sourceTree = "<group>"; };
 		53E0F618E93CE93C5160DB29 /* Pods_FSExtensionDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSExtensionDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D44A00F8DB756C03BA7143E /* UIFont+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FS.m"; sourceTree = "<group>"; };
 		5D44A012B3F93ECE8700FEA4 /* UISearchBar+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FS.h"; sourceTree = "<group>"; };
 		5D44A04057A40AC4705D0E1B /* NSFileManager+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+FS.h"; sourceTree = "<group>"; };
 		5D44A07F3A6E2DE9BDEEF8EB /* UIScreen+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+FS.h"; sourceTree = "<group>"; };
+		5D44A111A15E1B14D054F0A9 /* UIFont+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FS.h"; sourceTree = "<group>"; };
 		5D44A11B2CD4A54667692326 /* FSToolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSToolViewController.h; sourceTree = "<group>"; };
+		5D44A146F1B39FD4CEFEFAA8 /* NSCalendar+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+FS.h"; sourceTree = "<group>"; };
 		5D44A19685B9F7FC94C379F6 /* NSString+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FS.m"; sourceTree = "<group>"; };
 		5D44A1A598C7F0C29916A58A /* UIWindow+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+FS.h"; sourceTree = "<group>"; };
 		5D44A1E25D32392364224729 /* FSCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCategoryViewController.h; sourceTree = "<group>"; };
+		5D44A231D3C88F0CC7BA0E2A /* FSTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTool.h; sourceTree = "<group>"; };
 		5D44A246949D4C17C2A550CC /* UIView+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FS.h"; sourceTree = "<group>"; };
 		5D44A24C4D98ED63D53CE3B0 /* UISearchBar+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FS.m"; sourceTree = "<group>"; };
 		5D44A2B2EA456AB2B43291AC /* NSDictionary+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FS.h"; sourceTree = "<group>"; };
@@ -77,12 +86,14 @@
 		5D44A39B9256374DDC6B9A21 /* FSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSApp.h; sourceTree = "<group>"; };
 		5D44A3B6BFD8975090B830DA /* UINavigationItem+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+FS.h"; sourceTree = "<group>"; };
 		5D44A40750ADFA2DCE5281A8 /* FSGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSGlobal.h; sourceTree = "<group>"; };
+		5D44A416EF561B930C684663 /* NSCalendar+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+FS.m"; sourceTree = "<group>"; };
 		5D44A4428E1C67365F42B694 /* FSBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBase64.m; sourceTree = "<group>"; };
 		5D44A450763583983B1C1CF3 /* UIButton+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FS.m"; sourceTree = "<group>"; };
 		5D44A46E7D4023D92E252264 /* NSArray+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FS.m"; sourceTree = "<group>"; };
 		5D44A494BA333735E2A2FBBE /* NSDictionary+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FS.m"; sourceTree = "<group>"; };
 		5D44A4EB4711299ADD091481 /* NSTimer+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+FS.h"; sourceTree = "<group>"; };
 		5D44A5067DC17124CBCA4929 /* UINavigationBar+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+FS.m"; sourceTree = "<group>"; };
+		5D44A561CBE347D10D324FBD /* NSParagraphStyle+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSParagraphStyle+FS.m"; sourceTree = "<group>"; };
 		5D44A58547B4C98BB4B1A25C /* UIImage+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FS.m"; sourceTree = "<group>"; };
 		5D44A5DDF3242C369C9E33A1 /* UIImage+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FS.h"; sourceTree = "<group>"; };
 		5D44A62FE452AAC7CED14494 /* FSArrayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSArrayViewController.h; sourceTree = "<group>"; };
@@ -96,6 +107,7 @@
 		5D44A7D8327B85547AF85894 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		5D44A7F940F409C85C6CB429 /* FSToolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSToolViewController.m; sourceTree = "<group>"; };
 		5D44A88AFB16D3C245FFA6B5 /* NSTimer+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+FS.m"; sourceTree = "<group>"; };
+		5D44A892D3202FF233001C74 /* UIViewController+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FS.h"; sourceTree = "<group>"; };
 		5D44A8ABC9DE337A0E1FCC89 /* UIGestureRecognizer+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+FS.m"; sourceTree = "<group>"; };
 		5D44A8D097846B9E4F0E67AA /* FSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApp.m; sourceTree = "<group>"; };
 		5D44A8DE5299D59017F1D2F8 /* UIAlertView+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+FS.h"; sourceTree = "<group>"; };
@@ -106,6 +118,7 @@
 		5D44A9FE4B220EAF8989360B /* NSUserDefaults+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+FS.h"; sourceTree = "<group>"; };
 		5D44AA5F4B74861C310B5BE2 /* NSData+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FS.h"; sourceTree = "<group>"; };
 		5D44AA9236818A9CCCD30722 /* UIControl+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+FS.h"; sourceTree = "<group>"; };
+		5D44AB0607C7D33F0803E36D /* FSTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTool.m; sourceTree = "<group>"; };
 		5D44AB09C63153A01003A481 /* MBProgressHUD+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+FS.h"; sourceTree = "<group>"; };
 		5D44AB333A5C035E69897F3B /* NSData+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FS.m"; sourceTree = "<group>"; };
 		5D44AB3A2169DBF5B0435A05 /* UIControl+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+FS.m"; sourceTree = "<group>"; };
@@ -115,11 +128,13 @@
 		5D44ABE586B377E242783085 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		5D44AC8467BB73AD618BC424 /* UINavigationBar+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+FS.h"; sourceTree = "<group>"; };
 		5D44AD0220D3005A4CA8D092 /* NSArray+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FS.h"; sourceTree = "<group>"; };
+		5D44AD2813AEB5CB4FFD1EEC /* NSParagraphStyle+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+FS.h"; sourceTree = "<group>"; };
 		5D44AD479A70C8AC7759313D /* UIScreen+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+FS.m"; sourceTree = "<group>"; };
 		5D44AD4E6DC555C53A70EBF0 /* UIApplication+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+FS.m"; sourceTree = "<group>"; };
 		5D44AD6FE06D08A6E490CF11 /* UIBarButtonItem+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+FS.h"; sourceTree = "<group>"; };
 		5D44ADDB10D5BFDB940F2EB0 /* UITextField+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+FS.m"; sourceTree = "<group>"; };
 		5D44AE8E2F987D472D4EB8C6 /* FSCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCategoryViewController.m; sourceTree = "<group>"; };
+		5D44AE913413D8E0FA5E4D80 /* UIViewController+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FS.m"; sourceTree = "<group>"; };
 		5D44AE9C5E7313A89BA5FCA2 /* UIColor+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FS.h"; sourceTree = "<group>"; };
 		5D44AEAF78B992F9C9242D74 /* UITextField+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+FS.h"; sourceTree = "<group>"; };
 		5D44AEC01E3118A04BA06FA7 /* NSString+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FS.h"; sourceTree = "<group>"; };
@@ -221,6 +236,10 @@
 				5D44A9BAA543090B628D7EED /* UIGestureRecognizer+FS.h */,
 				5D44AD4E6DC555C53A70EBF0 /* UIApplication+FS.m */,
 				5D44A32FE35E6556E3B8F8AC /* UIApplication+FS.h */,
+				5D44A00F8DB756C03BA7143E /* UIFont+FS.m */,
+				5D44A111A15E1B14D054F0A9 /* UIFont+FS.h */,
+				5D44AE913413D8E0FA5E4D80 /* UIViewController+FS.m */,
+				5D44A892D3202FF233001C74 /* UIViewController+FS.h */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -246,6 +265,10 @@
 				5D44AEC01E3118A04BA06FA7 /* NSString+FS.h */,
 				5D44AB333A5C035E69897F3B /* NSData+FS.m */,
 				5D44A92F8EB5B2B88E28CE4E /* NSFileManager+FS.m */,
+				5D44A416EF561B930C684663 /* NSCalendar+FS.m */,
+				5D44A146F1B39FD4CEFEFAA8 /* NSCalendar+FS.h */,
+				5D44A561CBE347D10D324FBD /* NSParagraphStyle+FS.m */,
+				5D44AD2813AEB5CB4FFD1EEC /* NSParagraphStyle+FS.h */,
 			);
 			path = Fundation;
 			sourceTree = "<group>";
@@ -363,6 +386,8 @@
 				5D44A4428E1C67365F42B694 /* FSBase64.m */,
 				5D44A8D097846B9E4F0E67AA /* FSApp.m */,
 				5D44A39B9256374DDC6B9A21 /* FSApp.h */,
+				5D44AB0607C7D33F0803E36D /* FSTool.m */,
+				5D44A231D3C88F0CC7BA0E2A /* FSTool.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -548,6 +573,11 @@
 				5D44A67020C2804413604AF9 /* FSToolViewController.m in Sources */,
 				5D44AB327E92EBE5B3136C64 /* FSArrayViewController.m in Sources */,
 				5D44A9B3005CB782339B21DA /* FSBaseViewController.m in Sources */,
+				5D44ADBFA48757B1FF3501D9 /* NSCalendar+FS.m in Sources */,
+				5D44A43D984EBD9E4C5B7584 /* FSTool.m in Sources */,
+				5D44A2E2CA4C4BFFA1E4D192 /* NSParagraphStyle+FS.m in Sources */,
+				5D44ABC55356E32675B91B16 /* UIFont+FS.m in Sources */,
+				5D44AD62D06E8E1BAC4C3FCB /* UIViewController+FS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,12 +13,19 @@
  * @return 高度
  */
 -(CGFloat)fs_getHeightWithConstrainedWidth:(CGFloat)width font:(UIFont *)font;
+
 /**
  * 获取字符串的宽度
  * @param height 最大高度
  * @return 宽度
  */
 -(CGFloat)fs_getWidthWithConstrainedHeight:(CGFloat)height font:(UIFont *)font;
+
+/**
+ * 获取字符串的宽度
+ * @return 宽度
+ */
+-(CGFloat)fs_getWidthWithFont:(UIFont *)font;
 
 
 #pragma mark - 校验
@@ -33,6 +40,8 @@
 - (BOOL)fs_isIPAddress;
 - (NSString *)fs_substringFromIndex:(NSUInteger)from untilString:(NSString *)string;
 
++ (BOOL)fs_isEmpty:(nullable NSString *)string;
++ (BOOL)fs_isNotEmpty:(nullable NSString *)string;
 
 #pragma mark - Emoji
 /**

@@ -26,12 +26,12 @@
 
 #pragma mark - 校验
 
-- (BOOL)fs_empty {
+- (BOOL)fs_isEmpty {
     return [self length] > 0 ? NO : YES;
 }
 
 - (BOOL)fs_isNotEmpty {
-    return ![self fs_empty];
+    return ![self fs_isEmpty];
 }
 
 - (BOOL)fs_equalTo:(NSString *)other {

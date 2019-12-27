@@ -29,7 +29,7 @@
 
 
 #pragma mark - 校验
-- (BOOL)fs_empty;
+- (BOOL)fs_isEmpty;
 - (BOOL)fs_isNotEmpty;
 - (BOOL)fs_equalTo:(NSString *)other;
 - (BOOL)fs_isValueOf:(NSArray *)array;

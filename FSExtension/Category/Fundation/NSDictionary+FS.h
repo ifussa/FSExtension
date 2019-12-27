@@ -26,9 +26,9 @@
 @interface NSMutableDictionary (FS)
 
 #pragma mark - 安全操作字典
-- (void)fs_safeSetObject:(id)anObject forKey:(id<NSCopying>)aKey;
+- (void)fs_setObject:(id)anObject forKey:(id<NSCopying>)aKey;
 
-- (void)fs_safeRemoveObjectForKey:(id)aKey;
+- (void)fs_removeObjectForKey:(id)aKey;
 
 @end
 

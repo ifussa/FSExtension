@@ -8,10 +8,11 @@
 
 @implementation NSDictionary (FS)
 
--(NSData*)fsdata {
+-(NSData*)fs_data {
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
     return data;
 }
+
 
 - (NSString *)fs_dictionaryToJson {
     return [NSDictionary fs_dictionaryToJson:self];
@@ -36,14 +37,14 @@
 
 @implementation NSMutableDictionary (FS)
 
-- (void)fs_safeSetObject:(id)anObject forKey:(id < NSCopying >)aKey {
+- (void)fs_setObject:(id)anObject forKey:(id < NSCopying >)aKey {
     if (!anObject || !aKey) {
         return;
     }
     self[aKey] = anObject;
 }
 
-- (void)fs_safeRemoveObjectForKey:(id)aKey {
+- (void)fs_removeObjectForKey:(id)aKey {
     if(!aKey) {
         return;
     }

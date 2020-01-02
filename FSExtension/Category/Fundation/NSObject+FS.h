@@ -10,6 +10,13 @@
 #import <UIKit/UIKit.h>
 
 @interface NSObject (FS)
+
+/**
+ * 判断方法并执行
+ */
+- (BOOL)fs_performSelector:(SEL)selector;
+- (BOOL)fs_performSelector:(SEL)selector withObject:(id)object afterDelay:(NSTimeInterval)delay;
+
 @end
 
 @interface NSArray (FSRuntime)

@@ -10,6 +10,7 @@
 #define FSExtension_h
 
 #import "FSHeader.h"
+#import "FSDefine.h"
 #import "FSGlobal.h"
 
 

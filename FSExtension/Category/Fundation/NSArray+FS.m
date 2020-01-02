@@ -72,6 +72,21 @@
     return self[index];
 }
 
+- (NSArray *)fs_replace:(id)object atIndex:(NSInteger)index {
+    NSMutableArray *array = [self mutableCopy];
+    if (!object) {
+        return self;
+    }
+    if (index > array.count - 1) {
+        return self;
+    }
+    if (index < 0) {
+        return self;
+    }
+    array[(NSUInteger) index] = object;
+    return [NSArray arrayWithArray:array];
+}
+
 @end
 
 @implementation NSMutableArray (FS)
@@ -330,5 +345,20 @@
     [array removeObjectsAtIndexes:indexSet];
     return array;
 }
+
+
+#pragma mark - 替换
+- (NSArray *)fs_replaceAtIndex:(NSInteger)index block:(id (^)(id, NSUInteger))block {
+    NSMutableArray *newArray = [NSMutableArray arrayWithArray:self];
+    if (!block) {
+        return self;
+    }
+    if (index < 0 || index > newArray.count - 1) {
+        return self;
+    }
+    newArray[index] = block(newArray[index], index);
+    return newArray;
+}
+
 
 @end

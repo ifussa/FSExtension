@@ -14,6 +14,8 @@
 
 - (id)fs_objectAtIndex:(NSUInteger)index;
 
+/// 数组替换元素
+- (NSArray *)fs_replace:(id)object atIndex:(NSInteger)index;
 @end
 
 @interface NSMutableArray (FS)
@@ -118,5 +120,9 @@
  * 移除某种类型的元素
  */
 - (NSArray<ObjectType> *)fs_removeObjectOfClass:(Class)className;
+
+
+#pragma mark - 替换
+- (NSArray<ObjectType> *)fs_replaceAtIndex:(NSInteger)index block: (id(NS_NOESCAPE ^)(ObjectType element, NSUInteger index))block;
 @end
 

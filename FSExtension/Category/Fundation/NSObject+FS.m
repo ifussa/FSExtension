@@ -9,39 +9,65 @@
 #import "NSObject+FS.h"
 #import <objc/runtime.h>
 #import <sys/utsname.h>
+#import "FSDefine.h"
 
 @implementation NSObject (FS)
 
-+ (void)swizzleClassMethod:(Class)class originSelector:(SEL)originSelector otherSelector:(SEL)otherSelector
-{
++ (void)swizzleClassMethod:(Class)class originSelector:(SEL)originSelector otherSelector:(SEL)otherSelector {
     Method otherMehtod = class_getClassMethod(class, otherSelector);
     Method originMehtod = class_getClassMethod(class, originSelector);
     // 交换2个方法的实现
     method_exchangeImplementations(otherMehtod, originMehtod);
 }
 
-+ (void)swizzleInstanceMethod:(Class)class originSelector:(SEL)originSelector otherSelector:(SEL)otherSelector
-{
++ (void)swizzleInstanceMethod:(Class)class originSelector:(SEL)originSelector otherSelector:(SEL)otherSelector {
     Method otherMehtod = class_getInstanceMethod(class, otherSelector);
     Method originMehtod = class_getInstanceMethod(class, originSelector);
     // 交换2个方法的实现
     method_exchangeImplementations(otherMehtod, originMehtod);
 }
 
+
+- (BOOL)fs_performSelector:(SEL)selector {
+    if (!selector) {
+        return NO;
+    }
+    MTFYSuppressPerformSelectorLeakWarning(
+            if ([self respondsToSelector:selector]) {
+                [self performSelector:selector];
+                return YES;
+            }
+    );
+    return NO;
+}
+
+- (BOOL)fs_performSelector:(SEL)selector withObject:(id)object afterDelay:(NSTimeInterval)delay {
+    if (!selector || delay < 0) {
+        return NO;
+    }
+
+    MTFYSuppressPerformSelectorLeakWarning(
+            if ([self respondsToSelector:selector]) {
+                [self performSelector:selector withObject:object afterDelay:delay];
+                return YES;
+            }
+    );
+    return NO;
+}
+
+
 @end
 
 @implementation NSArray (FSRuntime)
 
-+ (void)load
-{
++ (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self swizzleInstanceMethod:NSClassFromString(@"__NSArrayI") originSelector:@selector(objectAtIndex:) otherSelector:@selector(fs_objectAtIndex:)];
     });
 }
 
-- (id)fs_objectAtIndex:(NSInteger)index
-{
+- (id)fs_objectAtIndex:(NSInteger)index {
     if (index < self.count) {
         return [self fs_objectAtIndex:index];
     } else {
@@ -53,8 +79,7 @@
 
 @implementation NSMutableArray (FSRuntime)
 
-+ (void)load
-{
++ (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self swizzleInstanceMethod:NSClassFromString(@"__NSArrayM") originSelector:@selector(addObject:) otherSelector:@selector(fs_addObject:)];
@@ -62,15 +87,13 @@
     });
 }
 
-- (void)fs_addObject:(id)object
-{
+- (void)fs_addObject:(id)object {
     if (object != nil) {
         [self fs_addObject:object];
     }
 }
 
-- (id)fs_objectAtIndex:(NSInteger)index
-{
+- (id)fs_objectAtIndex:(NSInteger)index {
     if (index < self.count) {
         return [self fs_objectAtIndex:index];
     } else {
@@ -82,6 +105,7 @@
 
 
 #pragma mark - FSUtil
+
 @implementation NSObject (FSUtil)
 - (NSString *)fs_getDocumentPath {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -393,8 +417,7 @@
 }
 
 
-
-+ (NSArray *)fs_objProperties{
++ (NSArray *)fs_objProperties {
     /*
      class_copyIvarList(__unsafe_unretained Class cls, unsigned int *outCount)       成员变量
      class_copyMethodList(__unsafe_unretained Class cls, unsigned int *outCount)     方法
@@ -414,7 +437,7 @@
     NSMutableArray *mArr = [NSMutableArray array];
 
     // 遍历所有属性
-    for (unsigned int i = 0; i < count; i ++) {
+    for (unsigned int i = 0; i < count; i++) {
 
         // 1. 从数组中取得所有属性
         objc_property_t property = propertyList[i];
@@ -432,28 +455,28 @@
     return mArr.copy;
 }
 
-+ (void)fs_logPrivatePropertiesWithClass:(NSString *)className{
++ (void)fs_logPrivatePropertiesWithClass:(NSString *)className {
     unsigned int count = 0;
     objc_property_t *properties = class_copyPropertyList([NSClassFromString(className) class], &count);
-    for (int i=0; i<count; i++) {
+    for (int i = 0; i < count; i++) {
         objc_property_t pty = properties[i];
         //获得所有的属性
         const char *cname = property_getName(pty);
-        NSLog(@"%@",[[NSString alloc] initWithCString:cname encoding:NSUTF8StringEncoding]);
+        NSLog(@"%@", [[NSString alloc] initWithCString:cname encoding:NSUTF8StringEncoding]);
     }
     free(properties);
 }
 
-+ (void)fs_logPrivateIvarsWithClass:(NSString *)className{
++ (void)fs_logPrivateIvarsWithClass:(NSString *)className {
     // 所有属性的个数
     unsigned int count = 0;
     //所有属性的数组 ,数组 char[] char *
     Ivar *ivars = class_copyIvarList([NSClassFromString(className) class], &count);
-    for (int i=0; i<count; i++) {
+    for (int i = 0; i < count; i++) {
         Ivar ivar = ivars[i];//获取到每一个属性
         //获取所有私有属性
         const char *cname = ivar_getName(ivar);//C语言的字符串
-        NSLog(@"%@",[[NSString alloc] initWithCString:cname encoding:NSUTF8StringEncoding]);
+        NSLog(@"%@", [[NSString alloc] initWithCString:cname encoding:NSUTF8StringEncoding]);
     }
     free(ivars);
 }
@@ -464,6 +487,7 @@
 #define BKTimeDelay(t) dispatch_time(DISPATCH_TIME_NOW, (uint64_t)(NSEC_PER_SEC * t))
 
 #pragma mark - FSDelay
+
 @implementation NSObject (FSDelay)
 - (id)fs_performBlock:(void (^)(id obj))block afterDelay:(NSTimeInterval)delay {
     return [self fs_performBlock:block onQueue:dispatch_get_main_queue() afterDelay:delay];
@@ -507,7 +531,9 @@
         }
         if (!cancelled) block();
     };
-    dispatch_after(BKTimeDelay(delay), queue, ^{ wrapper(NO); });
+    dispatch_after(BKTimeDelay(delay), queue, ^{
+        wrapper(NO);
+    });
     return [wrapper copy];
 }
 
@@ -532,7 +558,7 @@
     if (class_addMethod([self class], systemSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
 
         class_replaceMethod([self class], swizzledSelector, method_getImplementation(systemMethod), method_getTypeEncoding(systemMethod));
-    }else{
+    } else {
         method_exchangeImplementations(systemMethod, swizzledMethod);
     }
 

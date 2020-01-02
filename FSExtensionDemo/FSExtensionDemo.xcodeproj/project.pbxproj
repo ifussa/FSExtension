@@ -111,6 +111,7 @@
 		5D44A8ABC9DE337A0E1FCC89 /* UIGestureRecognizer+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+FS.m"; sourceTree = "<group>"; };
 		5D44A8D097846B9E4F0E67AA /* FSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApp.m; sourceTree = "<group>"; };
 		5D44A8DE5299D59017F1D2F8 /* UIAlertView+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+FS.h"; sourceTree = "<group>"; };
+		5D44A92F3122759B3DE0F399 /* FSDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDefine.h; sourceTree = "<group>"; };
 		5D44A92F8EB5B2B88E28CE4E /* NSFileManager+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+FS.m"; sourceTree = "<group>"; };
 		5D44A97C33881EC825952DFE /* UIBarButtonItem+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+FS.m"; sourceTree = "<group>"; };
 		5D44A9BAA543090B628D7EED /* UIGestureRecognizer+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+FS.h"; sourceTree = "<group>"; };
@@ -388,6 +389,7 @@
 				5D44A39B9256374DDC6B9A21 /* FSApp.h */,
 				5D44AB0607C7D33F0803E36D /* FSTool.m */,
 				5D44A231D3C88F0CC7BA0E2A /* FSTool.h */,
+				5D44A92F3122759B3DE0F399 /* FSDefine.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";

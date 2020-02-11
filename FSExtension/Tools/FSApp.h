@@ -9,7 +9,6 @@
 
 @interface FSApp : NSObject
 
-
 /*
  * 判断是否是异形屏
  */
@@ -20,8 +19,19 @@
  */
 +(void)neverAdjustsContentInsetForScrollView:(UIScrollView *)scrollView;
 
+/*
+ * 取消VC的UIScrollView自适应
+ */
 +(void)neverAdjustsContentInsetForViewController:(UIViewController *)VC;
 
+/**
+ * 当前APP版本
+ */
++ (NSString *)appVersion;
 
+/**
+ * 当前手机语言
+ */
++ (NSString *)appleLanguage;
 
 @end

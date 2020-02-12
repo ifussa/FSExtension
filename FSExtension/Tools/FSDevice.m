@@ -820,7 +820,7 @@ static const NSString *latestFirmwareContainer[] = {
 }
 
 /// 获取电池电压，单位 V 福特
-+ (CGFloat)getBatterVolocity {
++ (CGFloat)getBatterVoltage {
     return BatteryVoltageContainer[[self transformMachineToIDevice]];
 }
 

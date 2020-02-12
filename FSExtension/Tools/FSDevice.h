@@ -21,7 +21,7 @@
 + (NSInteger)getBatteryCapacity;
 
 /** 获取电池电压，单位 V 福特 */
-+ (CGFloat)getBatterVolocity;
++ (CGFloat)getBatterVoltage;
 
 /** 获取设备装机时的系统版本（最低支持版本） */
 + (const NSString *)getInitialFirmware;

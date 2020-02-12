@@ -12,6 +12,7 @@
 /// tool
 #import "FSLog.h"
 #import "FSTool.h"
+#import "FSDevice.h"
 
 
 /// category

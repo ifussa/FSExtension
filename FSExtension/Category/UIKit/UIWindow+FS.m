@@ -9,8 +9,12 @@
 
 @implementation UIWindow (FS)
 
-+(UIWindow *)fs_keyWindow {
-    return [UIApplication sharedApplication].keyWindow;
++ (UIWindow *)fs_keyWindow {
+    if (@available(iOS 13.0, *)) {
+        return [[[UIApplication sharedApplication] windows] lastObject];
+    } else {
+        return [UIApplication sharedApplication].keyWindow;
+    }
 }
 
 - (UIImage *)fs_takeScreenshot {
@@ -33,29 +37,22 @@
     CGContextTranslateCTM(context, -self.bounds.size.width * self.layer.anchorPoint.x, -self.bounds.size.height * self.layer.anchorPoint.y);
 
     // Correct for the screen orientation
-    if(!ignoreOrientation)
-    {
-        if(orientation == UIInterfaceOrientationLandscapeLeft)
-        {
-            CGContextRotateCTM(context, (CGFloat)M_PI_2);
+    if (!ignoreOrientation) {
+        if (orientation == UIInterfaceOrientationLandscapeLeft) {
+            CGContextRotateCTM(context, (CGFloat) M_PI_2);
             CGContextTranslateCTM(context, 0, -imageSize.width);
-        }
-        else if(orientation == UIInterfaceOrientationLandscapeRight)
-        {
-            CGContextRotateCTM(context, (CGFloat)-M_PI_2);
+        } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+            CGContextRotateCTM(context, (CGFloat) -M_PI_2);
             CGContextTranslateCTM(context, -imageSize.height, 0);
-        }
-        else if(orientation == UIInterfaceOrientationPortraitUpsideDown)
-        {
-            CGContextRotateCTM(context, (CGFloat)M_PI);
+        } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+            CGContextRotateCTM(context, (CGFloat) M_PI);
             CGContextTranslateCTM(context, -imageSize.width, -imageSize.height);
         }
     }
 
-    if([self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+    if ([self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
         [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:NO];
-    }
-    else {
+    } else {
         [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     }
 

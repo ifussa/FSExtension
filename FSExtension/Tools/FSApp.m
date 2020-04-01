@@ -53,5 +53,14 @@
 }
 
 
++ (NSString *)appVersion {
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+}
+
++ (NSString *)appleLanguage {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"][0];
+}
+
+
 
 @end

@@ -13,6 +13,7 @@
 		5D44A2E2CA4C4BFFA1E4D192 /* NSParagraphStyle+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A561CBE347D10D324FBD /* NSParagraphStyle+FS.m */; };
 		5D44A2EDC3B25E5326C3ABDC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A7D8327B85547AF85894 /* MBProgressHUD.m */; };
 		5D44A35F93286292698FE5E3 /* NSFileManager+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A92F8EB5B2B88E28CE4E /* NSFileManager+FS.m */; };
+		5D44A3B6CAE216DF44E3B285 /* FSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44AC7041582BD0E44056B8 /* FSDevice.m */; };
 		5D44A43D984EBD9E4C5B7584 /* FSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44AB0607C7D33F0803E36D /* FSTool.m */; };
 		5D44A480B272056954F6754C /* UIImage+FS.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A58547B4C98BB4B1A25C /* UIImage+FS.m */; };
 		5D44A4C73E6E511362AF7AEA /* FSBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D44A4428E1C67365F42B694 /* FSBase64.m */; };
@@ -109,6 +110,7 @@
 		5D44A88AFB16D3C245FFA6B5 /* NSTimer+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+FS.m"; sourceTree = "<group>"; };
 		5D44A892D3202FF233001C74 /* UIViewController+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FS.h"; sourceTree = "<group>"; };
 		5D44A8ABC9DE337A0E1FCC89 /* UIGestureRecognizer+FS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+FS.m"; sourceTree = "<group>"; };
+		5D44A8CFD24D9F797E8A74C9 /* FSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDevice.h; sourceTree = "<group>"; };
 		5D44A8D097846B9E4F0E67AA /* FSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApp.m; sourceTree = "<group>"; };
 		5D44A8DE5299D59017F1D2F8 /* UIAlertView+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+FS.h"; sourceTree = "<group>"; };
 		5D44A92F3122759B3DE0F399 /* FSDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDefine.h; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		5D44ABD81FB6396D7E8F462C /* UIButton+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FS.h"; sourceTree = "<group>"; };
 		5D44ABE3BD48525376DFC880 /* UILabel+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+FS.h"; sourceTree = "<group>"; };
 		5D44ABE586B377E242783085 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		5D44AC7041582BD0E44056B8 /* FSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSDevice.m; sourceTree = "<group>"; };
 		5D44AC8467BB73AD618BC424 /* UINavigationBar+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+FS.h"; sourceTree = "<group>"; };
 		5D44AD0220D3005A4CA8D092 /* NSArray+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FS.h"; sourceTree = "<group>"; };
 		5D44AD2813AEB5CB4FFD1EEC /* NSParagraphStyle+FS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSParagraphStyle+FS.h"; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				5D44AB0607C7D33F0803E36D /* FSTool.m */,
 				5D44A231D3C88F0CC7BA0E2A /* FSTool.h */,
 				5D44A92F3122759B3DE0F399 /* FSDefine.h */,
+				5D44AC7041582BD0E44056B8 /* FSDevice.m */,
+				5D44A8CFD24D9F797E8A74C9 /* FSDevice.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 				5D44A2E2CA4C4BFFA1E4D192 /* NSParagraphStyle+FS.m in Sources */,
 				5D44ABC55356E32675B91B16 /* UIFont+FS.m in Sources */,
 				5D44AD62D06E8E1BAC4C3FCB /* UIViewController+FS.m in Sources */,
+				5D44A3B6CAE216DF44E3B285 /* FSDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
